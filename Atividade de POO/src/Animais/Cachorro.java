@@ -26,11 +26,17 @@ public class Cachorro {
     }
 
     public String interagir(String acao){
-        if (acao.equals("carinho")){ //equals compara Strings
-            this.estadoDeEspirito = "feliz"; //This = Esse
-        } else {
-            this.estadoDeEspirito = "Neutro";
+
+        //enum
+        switch (acao){
+            case "carinho" : this.estadoDeEspirito = "Feliz";
+                break;
+            case "vai dormir!" : this.estadoDeEspirito = "Bravo";
+                break;
+            case "Pisar na patinha" : this.estadoDeEspirito = "Triste";
+                break;
+            default:this.estadoDeEspirito = "Neutro";
         }
-        return estadoDeEspirito;
+        return this.estadoDeEspirito;
     }
 }
